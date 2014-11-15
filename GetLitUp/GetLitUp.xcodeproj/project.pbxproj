@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		930128061A17711000C86CFC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B8E4D11A17196C007D3CBC /* AVFoundation.framework */; };
 		74F0FF851A175F6600FDF322 /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FF841A175F6600FDF322 /* DataGenerator.swift */; };
+		930128061A17711000C86CFC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B8E4D11A17196C007D3CBC /* AVFoundation.framework */; };
 		93B8E4B01A170E1E007D3CBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8E4AF1A170E1E007D3CBC /* AppDelegate.swift */; };
 		93B8E4B21A170E1E007D3CBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8E4B11A170E1E007D3CBC /* ViewController.swift */; };
 		93B8E4B51A170E1E007D3CBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B8E4B31A170E1E007D3CBC /* Main.storyboard */; };
