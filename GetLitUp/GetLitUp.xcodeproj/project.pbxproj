@@ -13,6 +13,8 @@
 		93B8E4B71A170E1E007D3CBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B8E4B61A170E1E007D3CBC /* Images.xcassets */; };
 		93B8E4BA1A170E1E007D3CBC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B8E4B81A170E1E007D3CBC /* LaunchScreen.xib */; };
 		93B8E4C61A170E1E007D3CBC /* GetLitUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8E4C51A170E1E007D3CBC /* GetLitUpTests.swift */; };
+		93B8E4D01A171844007D3CBC /* Flashlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8E4CF1A171844007D3CBC /* Flashlight.swift */; };
+		93B8E4D21A17196C007D3CBC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B8E4D11A17196C007D3CBC /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		93B8E4BF1A170E1E007D3CBC /* GetLitUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetLitUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B8E4C41A170E1E007D3CBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93B8E4C51A170E1E007D3CBC /* GetLitUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLitUpTests.swift; sourceTree = "<group>"; };
+		93B8E4CF1A171844007D3CBC /* Flashlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flashlight.swift; sourceTree = "<group>"; };
+		93B8E4D11A17196C007D3CBC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B8E4D21A17196C007D3CBC /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +64,7 @@
 		93B8E4A11A170E1E007D3CBC = {
 			isa = PBXGroup;
 			children = (
+				93B8E4D11A17196C007D3CBC /* AVFoundation.framework */,
 				93B8E4AC1A170E1E007D3CBC /* GetLitUp */,
 				93B8E4C21A170E1E007D3CBC /* GetLitUpTests */,
 				93B8E4AB1A170E1E007D3CBC /* Products */,
@@ -79,6 +85,7 @@
 			children = (
 				93B8E4AF1A170E1E007D3CBC /* AppDelegate.swift */,
 				93B8E4B11A170E1E007D3CBC /* ViewController.swift */,
+				93B8E4CF1A171844007D3CBC /* Flashlight.swift */,
 				93B8E4B31A170E1E007D3CBC /* Main.storyboard */,
 				93B8E4B61A170E1E007D3CBC /* Images.xcassets */,
 				93B8E4B81A170E1E007D3CBC /* LaunchScreen.xib */,
@@ -213,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B8E4B21A170E1E007D3CBC /* ViewController.swift in Sources */,
+				93B8E4D01A171844007D3CBC /* Flashlight.swift in Sources */,
 				93B8E4B01A170E1E007D3CBC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
