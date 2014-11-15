@@ -20,8 +20,6 @@ class Flashlight {
     
     var captureDevice : AVCaptureDevice?
     
-    var currentTime2 : Double = 1
-    
     init(startTime: Double, statusArray: [Int] ) {
         self.currentPos = 0
         self.startTime = startTime
@@ -32,10 +30,11 @@ class Flashlight {
     }
     
     func checkStart() {
+        NSLog("CHECKSTART")
         for x in 0..<statusArray.count {
             var currentTime = NSDate().timeIntervalSince1970
             var dateFormatter = NSDateFormatter()
-            while startTime > currentTime2 {
+            while startTime > currentTime {
                 sleep(1)
             }
             

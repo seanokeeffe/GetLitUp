@@ -23,8 +23,16 @@ class ServerData {
         self.sectionNumber = sectionNumber
         self.seatNumber = seatNumber
         
-        var start:Double = 0
-        var statusArray:[Int] = [1,1,0,1,1,1,0,1,1,1,0,0,1,1]
+        var dataGenerator = DataGenerator(AtStadium: stadiumName, InSection: sectionNumber, ForSeat: seatNumber)
+        sleep(4)
+        NSLog("GOT PAST SLEEP")
+        
+        var start:Double = dataGenerator.getStartTime()
+        var statusArray:[Int] = dataGenerator.getStatusArray()
+        
+        NSLog("Past making arrays")
+        
+        
         
         self.startTime = start
         self.statusArray = statusArray

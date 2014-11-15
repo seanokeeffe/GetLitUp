@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         var seatNumberText = seatNumber.text
         var serverData = ServerData(stadiumName: stadiumNameText, sectionNumber: sectionNumberText, seatNumber: seatNumberText)
         var flash = Flashlight(startTime: serverData.startTime, statusArray: serverData.statusArray)
-        
+        NSLog("Got past creation")
         flash.getCamera()
         flash.checkStart()
     }

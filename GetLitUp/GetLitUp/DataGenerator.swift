@@ -17,8 +17,8 @@ class DataGenerator: NSObject, NSURLConnectionDelegate {
     var _seat: String
     var _ip: String
     var _url: String
-    var _startTime: Double?
-    var _statusArray: NSArray?
+    var _startTime: Double!
+    var _statusArray: [Int]!
     
     init(AtStadium stadium:String, InSection section: String, ForSeat seat:String) {
         _stadium = stadium
@@ -36,9 +36,15 @@ class DataGenerator: NSObject, NSURLConnectionDelegate {
             if (error != nil) {
                 println(error)
             } else {
-                let components = data.componentsSeparatedByString(":") as [NSString]
-                self._startTime = components[0].doubleValue
-                self._statusArray = components[1].componentsSeparatedByString(",") as [NSString]
+                let components = data.componentsSeparatedByString(":") as [String]
+                var intStart = components[0].toInt()
+                self._startTime = Double(intStart!)
+                var arrayOfStrings = components[1].componentsSeparatedByString(",") as [String]
+                var newArray = [Int]()
+                for index in 0...arrayOfStrings.count-1 {
+                    newArray.append(arrayOfStrings[index].toInt()!)
+                }
+                self._statusArray = newArray
             }
         }
         
@@ -48,7 +54,7 @@ class DataGenerator: NSObject, NSURLConnectionDelegate {
         return self._startTime!
     }
     
-    func getStatusArray() -> NSArray {
+    func getStatusArray() -> [Int] {
         return self._statusArray!
     }
     
