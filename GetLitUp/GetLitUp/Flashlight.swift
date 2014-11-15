@@ -18,7 +18,7 @@ class Flashlight {
     let offError: NSErrorPointer
     let onError: NSErrorPointer
     
-    let flashlight:AVCaptureDevice = AVCaptureDevice()
+    var captureDevice : AVCaptureDevice?
     
     init(startTime: Double, statusArray: [Int] ) {
         self.currentPos = 0
@@ -30,29 +30,46 @@ class Flashlight {
     }
     
     func checkStart() {
-        if currentPos >= statusArray.count {
-            return
+        for x in 0..<statusArray.count {
+            var currentTime = NSDate().timeIntervalSince1970
+            while startTime > currentTime {
+                sleep(1)
+            }
+            
+            checkFlashlightStatus()
         }
-        
-        var currentTime = NSDate().timeIntervalSince1970
-        while startTime < currentTime {
-            sleep(1)
-        }
-        
-        checkFlashlightStatus()
     }
     
     func checkFlashlightStatus() {
-
+        NSLog("IN CHECK")
         if statusArray[currentPos] == 1 {
-            flashlight.setTorchModeOnWithLevel(AVCaptureMaxAvailableTorchLevel, error: onError)
+            NSLog("FLASHON")
+            captureDevice?.setTorchModeOnWithLevel(AVCaptureMaxAvailableTorchLevel, error: onError)
             currentPos += 1
         }
         else {
-            flashlight.setTorchModeOnWithLevel(0, error: offError)
+            NSLog("FLASHOFF")
+            captureDevice?.setTorchModeOnWithLevel(0, error: offError)
             currentPos += 1
         }
         startTime += 1
-        checkStart()
     }
+    
+    func getCamera() {
+        let devices = AVCaptureDevice.devices()
+        
+        // Loop through all the capture devices on this phone
+        for device in devices {
+            // Make sure this particular device supports video
+            if (device.hasMediaType(AVMediaTypeVideo)) {
+                // Finally check the position and confirm we've got the back camera
+                if(device.position == AVCaptureDevicePosition.Back) {
+                    captureDevice = device as? AVCaptureDevice
+                }
+            }
+        }
+    }
+    
+    
+    
 }

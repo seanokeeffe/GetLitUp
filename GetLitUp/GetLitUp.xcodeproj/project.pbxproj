@@ -15,6 +15,7 @@
 		93B8E4C61A170E1E007D3CBC /* GetLitUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8E4C51A170E1E007D3CBC /* GetLitUpTests.swift */; };
 		93B8E4D01A171844007D3CBC /* Flashlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8E4CF1A171844007D3CBC /* Flashlight.swift */; };
 		93B8E4D21A17196C007D3CBC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B8E4D11A17196C007D3CBC /* AVFoundation.framework */; };
+		93B8E4D41A173315007D3CBC /* ServerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8E4D31A173315007D3CBC /* ServerData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		93B8E4C51A170E1E007D3CBC /* GetLitUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLitUpTests.swift; sourceTree = "<group>"; };
 		93B8E4CF1A171844007D3CBC /* Flashlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flashlight.swift; sourceTree = "<group>"; };
 		93B8E4D11A17196C007D3CBC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		93B8E4D31A173315007D3CBC /* ServerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				93B8E4B11A170E1E007D3CBC /* ViewController.swift */,
 				93B8E4CF1A171844007D3CBC /* Flashlight.swift */,
 				93B8E4B31A170E1E007D3CBC /* Main.storyboard */,
+				93B8E4D31A173315007D3CBC /* ServerData.swift */,
 				93B8E4B61A170E1E007D3CBC /* Images.xcassets */,
 				93B8E4B81A170E1E007D3CBC /* LaunchScreen.xib */,
 				93B8E4AD1A170E1E007D3CBC /* Supporting Files */,
@@ -168,6 +171,7 @@
 				TargetAttributes = {
 					93B8E4A91A170E1E007D3CBC = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = AB8W7DKVQM;
 					};
 					93B8E4BE1A170E1E007D3CBC = {
 						CreatedOnToolsVersion = 6.1;
@@ -219,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B8E4D41A173315007D3CBC /* ServerData.swift in Sources */,
 				93B8E4B21A170E1E007D3CBC /* ViewController.swift in Sources */,
 				93B8E4D01A171844007D3CBC /* Flashlight.swift in Sources */,
 				93B8E4B01A170E1E007D3CBC /* AppDelegate.swift in Sources */,
@@ -344,9 +349,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GetLitUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d14297f6-2bfd-40b9-b053-74028c8a2b76";
 			};
 			name = Debug;
 		};
@@ -354,9 +362,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GetLitUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d14297f6-2bfd-40b9-b053-74028c8a2b76";
 			};
 			name = Release;
 		};
