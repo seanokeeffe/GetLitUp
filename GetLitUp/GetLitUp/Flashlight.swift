@@ -20,6 +20,8 @@ class Flashlight {
     
     var captureDevice : AVCaptureDevice?
     
+    var currentTime2 : Double = 1
+    
     init(startTime: Double, statusArray: [Int] ) {
         self.currentPos = 0
         self.startTime = startTime
@@ -32,7 +34,8 @@ class Flashlight {
     func checkStart() {
         for x in 0..<statusArray.count {
             var currentTime = NSDate().timeIntervalSince1970
-            while startTime > currentTime {
+            var dateFormatter = NSDateFormatter()
+            while startTime > currentTime2 {
                 sleep(1)
             }
             
@@ -44,13 +47,19 @@ class Flashlight {
         NSLog("IN CHECK")
         if statusArray[currentPos] == 1 {
             NSLog("FLASHON")
-            captureDevice?.setTorchModeOnWithLevel(AVCaptureMaxAvailableTorchLevel, error: onError)
+            captureDevice?.lockForConfiguration(nil)
+            captureDevice?.torchMode = AVCaptureTorchMode.On
+            captureDevice?.unlockForConfiguration()
             currentPos += 1
+            sleep(1)
         }
         else {
             NSLog("FLASHOFF")
-            captureDevice?.setTorchModeOnWithLevel(0, error: offError)
+            captureDevice?.lockForConfiguration(nil)
+            captureDevice?.torchMode = AVCaptureTorchMode.Off
+            captureDevice?.unlockForConfiguration()
             currentPos += 1
+            sleep(1)
         }
         startTime += 1
     }
@@ -69,7 +78,4 @@ class Flashlight {
             }
         }
     }
-    
-    
-    
 }
